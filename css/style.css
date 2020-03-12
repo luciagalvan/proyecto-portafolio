@@ -68,8 +68,24 @@ body {
 *****************************************/
 
 /* Nav */
+
+.main-inicio {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+    "back back back back inicio contacto"
+    "nav nav nav titulo-proyecto titulo-proyecto titulo-proyecto"
+    "nav nav nav . . ."
+    "nav nav nav . . .";
+}
+
 .nav {
   border: 1px solid var(--primary);
+  grid-area: nav;
+  border: 1px solid blue;
+  font-size: 72px;
+  text-align: center;
 }
 
 .nav ul {
@@ -129,4 +145,65 @@ body {
 
 
 /* .child:nth-child(3){} */
+
+
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+}
+
+
+.main-proyecto {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+    "back back back back inicio contacto"
+    "descripcion-proyecto descripcion-proyecto descripcion-proyecto titulo-proyecto titulo-proyecto titulo-proyecto"
+    "descripcion-proyecto descripcion-proyecto descripcion-proyecto . . ."
+    "descripcion-proyecto descripcion-proyecto descripcion-proyecto . . .";
+}
+
+.back {
+  grid-area: back;
+  border: 1px solid blue;
+}
+
+.inicio {
+  grid-area: inicio;
+  border: 1px solid blue;
+  padding-top: 1em;
+  text-align: center;
+}
+
+.contacto {
+  grid-area: contacto;
+  border: 1px solid blue;
+  text-align: center;
+  padding-top: 1em;
+}
+
+.descripcion-proyecto {
+  grid-area: descripcion-proyecto;
+  border: 1px solid blue;
+  padding-left: 4em;
+  padding-right: 4em;
+  text-align: justify;
+}
+
+.titulo-proyecto {
+  grid-area: titulo-proyecto;
+  border: 1px solid blue;
+  text-align: center;
+  font-size: 72px;
+}
 
