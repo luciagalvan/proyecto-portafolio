@@ -166,7 +166,7 @@ ul {
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: max-content max-content 1fr min-content;
+  grid-template-rows: max-content 80px 1fr min-content;
 }
 
 #nav-toggle {
@@ -182,6 +182,7 @@ ul {
 .nombre {
   grid-column: 1 / 4;
   grid-row: 2 / 3;
+  align-self: end;
 }
 
 .descripcion {
@@ -194,7 +195,6 @@ ul {
   grid-row: 4 / 5;
 }
 
-/*
 @media (min-width: 40em) {
   .grid-container {
   }
@@ -216,7 +216,6 @@ ul {
 }
 
 .nombre {
-  border: 2px dotted blue;
   max-height: 80px;
 }
 @media (min-width: 40em) {
