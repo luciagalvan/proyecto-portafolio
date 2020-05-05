@@ -2,208 +2,207 @@
 *    Variables
 *****************************************/
 :root {
-  /* Colors */
-  --background: white;
-  --primary: #0366EE;
-  --secondary: #FCB42A;
-  /* Typography */
-  --font-family: 'DM Sans', sans-serif;
+  --white: #ffffff;
+  --black: #000000;
+  --primary: #0366ee;
+  --link: #0000ee;
+  --hover: #551a8b;
+  --secondary: #fcb42a;
+  --font-family: "DM Sans", sans-serif;
 }
 
-/* Resets */
-html{box-sizing:border-box}*,::after,::before{box-sizing:inherit}blockquote,body,figure,h1,h2,h3,h4,h5,h6,hr,li,ol,pre,ul{margin:0;padding:0}ul{list-style:none}button,input,select,textarea{color:inherit;font:inherit;letter-spacing:inherit}button,input,textarea{border:1px solid gray}button{border-radius:0;padding:.75em 1em;background-color:transparent}button *{pointer-events:none}embed,iframe,img,object,video{display:block;max-width:100%}table{table-layout:fixed;width:100%}[hidden]{display:none}noscript{display:block;margin-bottom:1em;margin-top:1em}
-
 /****************************************
-*    Base - Elements
-*****************************************/
+ *    Base - Elements
+ *****************************************/
 html {
   height: 100%;
 }
 
 body {
-  color: var(--primary);
-  background: var(--background);
-  font-family: var(--font-family);
+  color: var(--black);
+  background: var(--white);
   font-size: 100%;
-  font-size: 18px;
+  font-size: calc(16px + (20 - 16) * ((100vw - 720px) / (1400 - 720)));
+  font-family: var(--font-family);
 }
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
-/* Tipografía */
-p {
-  font-size: 1em;
+a:hover,
+a:active {
+  color: var(--hover);
+  text-decoration: underline;
 }
 
-h1 {
-  font-size: 2em;
-  line-height: 1.25;
-}
-
-h2 {
-  font-size: 1.6em;
-  line-height: 1.2;
-}
-
-h3 {
-  font-size: 1.4em;
-  line-height: 1.15;
-}
-
-h4 {
-  font-size: 1.2em;
-  line-height: 1;
-}
-
-/* Tipografía responsiva */
-/* https://css-tricks.com/snippets/css/fluid-typography */
-body {
-  font-size: calc(16px + (20 - 16) * ((100vw - 720px) / (1400 - 720)));
+ul {
+  list-style: none;
+  padding-left: 0;
 }
 
 /****************************************
-*    Componentes
-*****************************************/
-
-/* Nav */
-
-.main-inicio {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  grid-template-areas:
-    "back back back back inicio contacto"
-    "nav nav nav titulo-proyecto titulo-proyecto titulo-proyecto"
-    "nav nav nav . . ."
-    "nav nav nav . . .";
+ *    Components - Common
+ *****************************************/
+.header {
+}
+.header a {
+}
+@media (min-width: 40em) {
+  .header {
+  }
 }
 
-.nav {
-  border: 1px solid var(--primary);
-  grid-area: nav;
-  border: 1px solid blue;
-  font-size: 72px;
-  text-align: center;
+.main {
+}
+.main svg {
+}
+@media (min-width: 40em) {
+  .main {
+  }
 }
 
-.nav ul {
-  border: 1px solid var(--primary);
-}
-
-/* branding */
-.branding {
-  border: 1px solid var(--secondary);
-}
-
-.branding a {
-  border: 1px solid var(--secondary);
-}
-
-/* Footer */
 .footer {
-  border: 1px solid var(--primary);
+}
+.footer ul {
+}
+.footer li {
+}
+@media (min-width: 40em) {
+  .footer {
+  }
+}
+
+/****************************************
+ *    Components - Layouts
+ *****************************************/
+.proyectos {
+}
+
+.proyectos ul {
+}
+
+.proyectos li {
+}
+
+.proyectos img {
+}
+
+@media (min-width: 40em) {
+  .proyectos {
+  }
+}
+
+/****************************************
+ *    Components - Common
+ *****************************************/
+.home-container {
+  text-align: center;
+  display: grid;
+}
+@media (min-width: 40em) {
+  .home-container {
+  }
+}
+
+.banner {
+}
+.site-name {
+  font-size: 3.8em;
+  font-weight: normal;
+  color: rgb(255, 228, 189);
+  letter-spacing: 0.03em;
+}
+@media (min-width: 40em) {
+  .banner {
+  }
+}
+
+.menu {
+  text-justify: distribute-all-lines;
+  font-size: 3.5em;
+  font-weight: bold;
+  margin-top: 25px;
+}
+.menu a {
+  line-height: 6vh;
+  color: black;
+}
+
+.menu li {
+  letter-spacing: 0.04em;
+  margin-top: -0.3em;
+  margin-bottom: -0.3em;
+}
+@media (min-width: 40em) {
+  .nav {
+  }
+  .menu {
+  }
+}
+
+.footer {
+  bottom: 0px;
+  position: absolute;
+  margin-left: -50%;
+  right: 2%;
+  left: 50%;
 }
 .footer p {
-  font-size: 14px;
+}
+@media (min-width: 40em) {
+  .footer {
+  }
 }
 
-/*header-proyecto*/
-.contenido{
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-}
-.header{
-  height: 15vh;
-  font-size: 36px;
-  line-height: 100px;
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-}
+/****************************************
+ *    Components - Proyectos
+ *****************************************/
 
-/* flex-grow flex-shrink flex-basis*/
-.texto{
-  font-size: 36px;
-  flex: 1 1 auto;
-}
-.titulo{
-  font-size: 72px;
-  flex: 1 1 auto;
-}
-.child{
-  flex: 2 2 auto;
-}
-.child:nth-child(1){
-  flex: 1 1 auto;
-}
-.child:nth-child(2){
-  flex: 1 1 auto;
-}
-
-
-/* .child:nth-child(3){} */
-
-
-
-html {
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-body {
-  margin: 0;
-}
-
-
-.main-proyecto {
+.grid-container {
+  height: 100vh;
+  max-width: 90vw;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  grid-template-areas:
-    "back back back back inicio contacto"
-    "descripcion-proyecto descripcion-proyecto descripcion-proyecto titulo-proyecto titulo-proyecto titulo-proyecto"
-    "descripcion-proyecto descripcion-proyecto descripcion-proyecto . . ."
-    "descripcion-proyecto descripcion-proyecto descripcion-proyecto . . .";
+}
+@media (min-width: 40em) {
+  .grid-container {
+  }
 }
 
-.back {
-  grid-area: back;
-  border: 1px solid blue;
+.top-nav {
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-around;
+  height: 5vh;
+}
+.top-nav li {
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 40em) {
+  .top-nav {
+  }
 }
 
-.inicio {
-  grid-area: inicio;
-  border: 1px solid blue;
-  padding-top: 1em;
-  text-align: center;
+.nombre {
+}
+@media (min-width: 40em) {
+  .nombre {
+  }
 }
 
-.contacto {
-  grid-area: contacto;
-  border: 1px solid blue;
-  text-align: center;
-  padding-top: 1em;
+.descripcion {
+}
+@media (min-width: 40em) {
+  .descripcion {
+  }
 }
 
-.descripcion-proyecto {
-  grid-area: descripcion-proyecto;
-  border: 1px solid blue;
-  padding-left: 4em;
-  padding-right: 4em;
-  text-align: justify;
+footer .grid-container .footer {
 }
-
-.titulo-proyecto {
-  grid-area: titulo-proyecto;
-  border: 1px solid blue;
-  text-align: center;
-  font-size: 72px;
+@media (min-width: 40em) {
+  .grid-container .footer {
+  }
 }
-
