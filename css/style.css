@@ -177,14 +177,19 @@ ul {
   grid-template-rows: max-content 80px 1fr 1fr;
 }
 
+.nombre {
+  align-self: end;
+}
+
 .image-container {
   padding: 1em;
 }
+/*
 
 .image-container img {
   margin-top: 2.5em;
 }
-
+  */
 @media (min-width: 40em) {
   .grid-container {
     position: relative;
@@ -239,6 +244,19 @@ ul {
   display: flex;
   align-items: center;
 }
+
+.flechita {
+  width: 100%;
+  max-width: 400px;
+}
+
+.flechita path {
+  fill: none;
+  stroke: #000;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+}
+
 @media (min-width: 40em) {
   /*
   .top-nav {
@@ -246,9 +264,6 @@ ul {
   */
 }
 
-.nombre {
-  max-height: 80px;
-}
 /*
 @media (min-width: 40em) {
   .nombre {
@@ -282,3 +297,14 @@ footer .grid-container .footer {
 .outline {
   border: 2px dotted blue;
 }
+
+/*
+Proyectos
+  - Menu de navrgación alineado a márgenes a márgen
+  - Fijar inicio flecha
+  - Alinear texto de proyecto a título de proyecto
+  - Fijar texto y título a pantalla (hacer scroll de imágenes de fondo independiente del texto y título)
+  
+  
+  
+*/
